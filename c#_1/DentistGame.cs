@@ -89,4 +89,22 @@ public class DentistGame : MonoBehaviour
         }
     }
 }
+using UnityEngine;
+
+public class AnimalBehavior : MonoBehaviour
+{
+    public bool isBeingTreated = false;
+
+    public void TreatAnimal()
+    {
+        isBeingTreated = true;
+        // Add logic for animal reactions like animations or sound effects
+    }
+
+    public void StopTreatment()
+    {
+        isBeingTreated = false;
+        // Reset animal reactions
+    }
+}
 
