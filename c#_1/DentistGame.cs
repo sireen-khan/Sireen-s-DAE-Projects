@@ -108,3 +108,42 @@ public class AnimalBehavior : MonoBehaviour
     }
 }
 
+using UnityEngine;
+
+public class Toothbrush : MonoBehaviour
+{
+    public GameObject animal;
+    private AnimalBehavior animalBehavior;
+
+    void Start()
+    {
+        animalBehavior = animal.GetComponent<AnimalBehavior>();
+    }
+
+    public void UseToothbrush()
+    {
+        if (animalBehavior.isBeingTreated)
+        {
+            // Handle brushing action (animate brushing on teeth)
+            Debug.Log("Brushing the teeth!");
+            // Add brushing sound and effects here.
+        }
+    }
+}
+
+using UnityEngine;
+
+public class PlayerController : MonoBehaviour
+{
+    public float moveSpeed = 5f;
+
+    void Update()
+    {
+        // Player movement
+        float moveX = Input.GetAxis("Horizontal");
+        float moveY = Input.GetAxis("Vertical");
+
+        transform.Translate(new Vector3(moveX, moveY, 0) * moveSpeed * Time.deltaTime);
+    }
+}
+
