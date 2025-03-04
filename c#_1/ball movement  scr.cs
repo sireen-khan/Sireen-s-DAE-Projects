@@ -27,3 +27,4 @@ public class BallMovement : MonoBehaviour
         rb.AddForce(initialDirection * throwForce, ForceMode2D.Impulse);
     }
 }
+
