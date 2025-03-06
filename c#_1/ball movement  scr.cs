@@ -2,8 +2,11 @@ using UnityEngine;
 
 public class BallMovement : MonoBehaviour
 {
-    public float throwForce = 20f;   // Power of the throw
+    public float throwForce = 10f;   // Power of the throw
     public Vector2 initialDirection; // Direction the ball is thrown in
+
+    public float linearDrag = 5f; // Increase this value to slow the ball over time
+
     private Rigidbody2D rb;
 
     void Start()
@@ -26,5 +29,7 @@ public class BallMovement : MonoBehaviour
         // Add force to move the ball forward
         rb.AddForce(initialDirection * throwForce, ForceMode2D.Impulse);
     }
+
+   
 }
 
